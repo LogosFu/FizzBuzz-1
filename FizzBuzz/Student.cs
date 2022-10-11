@@ -11,17 +11,22 @@ namespace FizzBuzz
 
         public string SoundOff()
         {
-            if (IsMultipleOf(this.order, 3))
+            if (IsMultipleOf(3) && IsMultipleOf(5))
+            {
+                return "FizzBuzz";
+            }
+
+            if (IsMultipleOf(3))
             {
                 return "Fizz";
             }
 
-            if (IsMultipleOf(this.order, 5))
+            if (IsMultipleOf(5))
             {
                 return "Buzz";
             }
 
-            if (IsMultipleOf(this.order, 7))
+            if (IsMultipleOf(7))
             {
                 return "Whizz";
             }
@@ -29,9 +34,9 @@ namespace FizzBuzz
             return this.order.ToString();
         }
 
-        private static bool IsMultipleOf(int intPtr, int multiple)
+        private bool IsMultipleOf(int multiple)
         {
-            return intPtr % multiple == 0;
+            return this.order % multiple == 0;
         }
     }
 }
