@@ -16,6 +16,11 @@ namespace FizzBuzz
                 return "Fizz";
             }
 
+            if (this.order % 5 == 0)
+            {
+                return "Buzz";
+            }
+
             return this.order.ToString();
         }
     }

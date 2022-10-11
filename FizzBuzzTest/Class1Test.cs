@@ -4,18 +4,6 @@ using Xunit;
 
 namespace FizzBuzzTest
 {
-    public class Class1Test
-    {
-        [Fact]
-        public void Test1()
-        {
-            Class1 class1 = new Class1();
-
-            //then
-            Assert.NotNull(class1);
-        }
-    }
-
     public class StudentTest
     {
         [Theory]
@@ -44,6 +32,19 @@ namespace FizzBuzzTest
             var soundOff = student.SoundOff();
             //then
             Assert.Equal("Fizz", soundOff);
+        }
+
+        [Theory]
+        [InlineData(5)]
+        [InlineData(10)]
+        public void Given_student_order_is_multiple_of_5_when_sound_off_then_return_Buzz(int order)
+        {
+            //given
+            var student = new Student(order);
+            //when
+            var soundOff = student.SoundOff();
+            //then
+            Assert.Equal("Buzz", soundOff);
         }
     }
 }
