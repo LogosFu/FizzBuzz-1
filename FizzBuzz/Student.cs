@@ -21,6 +21,11 @@ namespace FizzBuzz
                 return "Buzz";
             }
 
+            if (IsMultipleOf(this.order, 7))
+            {
+                return "Whizz";
+            }
+
             return this.order.ToString();
         }
 

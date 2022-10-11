@@ -46,5 +46,18 @@ namespace FizzBuzzTest
             //then
             Assert.Equal("Buzz", soundOff);
         }
+
+        [Theory]
+        [InlineData(7)]
+        [InlineData(14)]
+        public void Given_student_order_is_multiple_of_7_when_sound_off_then_return_Whizz(int order)
+        {
+            //given
+            var student = new Student(order);
+            //when
+            var soundOff = student.SoundOff();
+            //then
+            Assert.Equal("Whizz", soundOff);
+        }
     }
 }
