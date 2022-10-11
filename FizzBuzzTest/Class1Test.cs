@@ -15,4 +15,20 @@ namespace FizzBuzzTest
             Assert.NotNull(class1);
         }
     }
+
+    public class StudentTest
+    {
+        [Theory]
+        [InlineData(1)]
+        [InlineData(2)]
+        public void Given_student_has_order_when_sound_off_then_return_order(int order)
+        {
+            //given
+            var student = new Student(order);
+            //when
+            var soundOff = student.SoundOff();
+            //then
+            Assert.Equal(order.ToString(), soundOff);
+        }
+    }
 }
