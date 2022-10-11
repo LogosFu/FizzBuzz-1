@@ -11,6 +11,11 @@ namespace FizzBuzz
 
         public string SoundOff()
         {
+            if (IsMultipleOf(5) && IsMultipleOf(7))
+            {
+                return "BuzzWhizz";
+            }
+
             if (IsMultipleOf(3) && IsMultipleOf(7))
             {
                 return "FizzWhizz";
